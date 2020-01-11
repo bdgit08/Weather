@@ -35,10 +35,9 @@ class ForecastFiveAdapter : RecyclerView.Adapter<ForecastFiveAdapter.ForecastFiv
     inner class ForecastFiveViewHolder(val view : View) : RecyclerView.ViewHolder(view){
         fun bind(cuaca: Cuaca){
             val weather  = cuaca.weather!!.get(0)
-            val date = FormatTime.convertStringToDate(cuaca.dtTxt)
             val url = "https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/widgets/${weather.icon}.png"
             Glide.with(view.ivWeather).load(url).into(view.ivWeather)
-            view.tvHari.text = FormatTime.convertDateToTime(date)
+            view.tvHari.text = FormatTimes.convertTimeEpochToDate(cuaca.dt!!,"HH:mm")
             view.tvStatusWheater.text = weather.main
             view.tvTemp.text = "${cuaca.main!!.temp!!.toInt()} \u2103"
         }

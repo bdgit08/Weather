@@ -2,11 +2,12 @@
 
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginRight="8dp"
     android:layout_marginBottom="8dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    app:cardBackgroundColor="#30A1F7">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,33 +16,33 @@
         <TextView
             android:id="@+id/tvHari"
             style="@style/TextAppearance.MaterialComponents.Subtitle1"
-            android:drawableLeft="@drawable/ic_access_time_black_24dp"
-            android:drawablePadding="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:gravity="center"
             android:layout_marginTop="8dp"
+            android:drawableStart="@drawable/ic_access_time_black_24dp"
+            android:drawableLeft="@drawable/ic_access_time_black_24dp"
+            android:drawablePadding="8dp"
+            android:gravity="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="03.00"
-            android:drawableStart="@drawable/ic_access_time_black_24dp" />
+            tools:text="03.00" />
 
         <ImageView
             android:id="@+id/ivWeather"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:scaleType="center"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            tools:src="@drawable/ic_weather_cloud_sun_sunny_shine_summer_day"
+            android:scaleType="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvHari" />
+            app:layout_constraintTop_toBottomOf="@+id/tvHari"
+            tools:src="@drawable/ic_weather_cloud_sun_sunny_shine_summer_day" />
 
         <TextView
             android:id="@+id/tvTemp"
@@ -58,6 +59,7 @@
 
         <TextView
             android:id="@+id/tvStatusWheater"
+            style="@style/TextAppearance.MaterialComponents.Subtitle2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -65,7 +67,6 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            style="@style/TextAppearance.MaterialComponents.Subtitle2"
             android:text="Mostly Sunny"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

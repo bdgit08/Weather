@@ -1,9 +1,10 @@
 package com.example.weather.model
 
-import com.example.weather.FormatTime
+import com.example.weather.FormatTimes
 import java.io.Serializable
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 class Cuaca : Serializable {
 
@@ -31,11 +32,14 @@ class Cuaca : Serializable {
     @SerializedName("dt_txt")
     @Expose
     var dtTxt: String? = null
-    var date : String = ""
+    var date: String = ""
         get() {
-        val date = FormatTime.convertStringToDate(dtTxt)
-        return FormatTime.convertDateToString(date)
-    }
+            val time = FormatTimes.convertTimeEpochToDateSystem(Date().time, "dd MMMM yyyy")
+            val time2 = FormatTimes.convertTimeEpochToDate(dt!!, "dd MMMM yyyy")
+            return if (time == time2) {
+                "Hari ini"
+            }else time2
+        }
 
     companion object {
         private const val serialVersionUID = -359121440867785429L
